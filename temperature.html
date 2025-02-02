@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="iphone-frame">
+        <div class="iphone-notch"></div>
+        <div class="iphone-screen">
+            <div class="app-content">
+                <div class="back-button">←</div>
+                <div class="detail-view temperature-view">
+                    <!-- Main Temperature Display -->
+                    <div class="temperature-circle">
+                        <div class="icy-ring"></div>
+                        <div class="current-temp">10°</div>
+                        <div class="temp-range">
+                            <span class="high">14°</span>
+                            <span class="divider">|</span>
+                            <span class="low">6°</span>
+                        </div>
+                    </div>
+
+                    <!-- Temperature Graph -->
+                    <div class="temp-graph">
+                        <h2 style="text-align: center; margin: 1rem 0;">Temperature</h2>
+                        <div class="intensity-graph">
+                            <div class="y-axis">
+                                <span>0°</span>
+                                <span>5°</span>
+                                <span>10°</span>
+                                <span>15°</span>
+                                <span>20°</span>
+                            </div>
+                            <div class="graph-area">
+                                <svg viewBox="0 0 300 100">
+                                    <linearGradient id="tempGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color: rgba(124, 185, 232, 0.3)"/>
+                                        <stop offset="100%" style="stop-color: rgba(124, 185, 232, 0)"/>
+                                    </linearGradient>
+                                    <path d="M 0,60 C 50,40 100,70 150,50 C 200,30 250,45 300,35" 
+                                          stroke="#7cb9e8" 
+                                          stroke-width="2"
+                                          fill="none"/>
+                                    <path d="M 0,60 C 50,40 100,70 150,50 C 200,30 250,45 300,35 L 300,100 L 0,100 Z" 
+                                          fill="url(#tempGradient)"/>
+                                </svg>
+                            </div>
+                            <div class="x-axis">
+                                <span>NOW</span>
+                                <span>6P</span>
+                                <span>12A</span>
+                                <span>6A</span>
+                                <span>12P</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Temperature Details Grid -->
+                    <div class="detail-grid">
+                        <div class="detail-box">
+                            <h3>Feels Like</h3>
+                            <span class="value">8°</span>
+                        </div>
+                        <div class="detail-box">
+                            <h3>Humidity</h3>
+                            <span class="value">65%</span>
+                        </div>
+                        <div class="detail-box">
+                            <h3>Dew Point</h3>
+                            <span class="value">4°</span>
+                        </div>
+                        <div class="info-box aqi-box">
+                            <div class="aqi-value">
+                                32
+                                <span class="aqi-status">Good</span>
+                            </div>
+                            <div class="aqi-label">Air Quality</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="iphone-home-indicator"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

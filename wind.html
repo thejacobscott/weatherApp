@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Weather Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="iphone-frame">
+        <div class="iphone-notch"></div>
+        <div class="iphone-screen">
+            <div class="app-content">
+                <div class="back-button">←</div>
+                <div class="detail-view human-view">
+                    <div class="wind-display" style="margin-bottom: 0;">
+                        <div class="human-figure">
+                            🥶
+                        </div>
+                        <div class="wind-curves">
+                            <svg width="100%" height="100%" class="wind-svg" viewBox="0 0 250 200">
+                                <path class="wind-path" d="M 0,100 Q 62.5,80 125,100 Q 187.5,120 250,100" />
+                                <path class="wind-path delay1" d="M 0,70 Q 62.5,50 125,70 Q 187.5,90 250,70" />
+                                <path class="wind-path delay2" d="M 0,130 Q 62.5,110 125,130 Q 187.5,150 250,130" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Wind Info Grid -->
+                    <div class="info-grid">
+                        <div class="info-box wind-speed-box">
+                            <h3>Wind Speed</h3>
+                            <div class="speed-value">12</div>
+                            <div class="speed-label">mph ESE ↗️</div>
+                        </div>
+                        <div class="info-box wind-gust-box">
+                            <h3>Wind Gusts</h3>
+                            <div class="gust-value">18</div>
+                            <div class="gust-label">mph</div>
+                        </div>
+                    </div>
+
+                    <!-- What to Wear Section -->
+                    <div class="clothing-recommendations">
+                        <h2 style="text-align: center; margin: 0.5rem 0;">What to Wear</h2>
+                        <div class="wear-grid">
+                            <div class="wear-item">
+                                <div class="wear-box">🧥</div>
+                                <span class="wear-label">Coat</span>
+                            </div>
+                            <div class="wear-item">
+                                <div class="wear-box">🧣</div>
+                                <span class="wear-label">Scarf</span>
+                            </div>
+                            <div class="wear-item">
+                                <div class="wear-box">🧤</div>
+                                <span class="wear-label">Gloves</span>
+                            </div>
+                            <div class="wear-item">
+                                <div class="wear-box">🥾</div>
+                                <span class="wear-label">Boots</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wind Speed Graph -->
+                    <div class="wind-graph">
+                        <h2 style="text-align: center; margin: 1rem 0;">Wind Speed</h2>
+                        <div class="intensity-graph">
+                            <div class="y-axis">
+                                <span>20mph</span>
+                                <span>15mph</span>
+                                <span>10mph</span>
+                                <span>5mph</span>
+                                <span>0mph</span>
+                            </div>
+                            <div class="graph-area">
+                                <svg viewBox="0 0 300 100">
+                                    <linearGradient id="windGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color: rgba(124, 185, 232, 0.3)"/>
+                                        <stop offset="100%" style="stop-color: rgba(124, 185, 232, 0)"/>
+                                    </linearGradient>
+                                    <path d="M 0,60 C 50,40 100,70 150,50 C 200,30 250,45 300,35" 
+                                          stroke="#7cb9e8" 
+                                          stroke-width="2"
+                                          fill="none"/>
+                                    <path d="M 0,60 C 50,40 100,70 150,50 C 200,30 250,45 300,35 L 300,100 L 0,100 Z" 
+                                          fill="url(#windGradient)"/>
+                                </svg>
+                            </div>
+                            <div class="x-axis">
+                                <span>NOW</span>
+                                <span>6P</span>
+                                <span>12A</span>
+                                <span>6A</span>
+                                <span>12P</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Info Grid -->
+                    <div class="bottom-info-grid">
+                        <div class="info-box pressure-box">
+                            <h3>Pressure</h3>
+                            <div class="pressure-value">30.3</div>
+                            <div class="pressure-label">inHg</div>
+                        </div>
+                        <div class="info-box visibility-box">
+                            <h3>Visibility</h3>
+                            <div class="visibility-value">4.0</div>
+                            <div class="visibility-label">miles</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="iphone-home-indicator"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

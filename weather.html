@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="iphone-frame">
+        <div class="iphone-notch"></div>
+        <div class="iphone-screen">
+            <div class="app-content">
+                <div class="back-button">←</div>
+                <div class="detail-view weather-view">
+                    <!-- Main Weather Icon -->
+                    <div class="weather-icon large">
+                        <svg viewBox="0 0 720 400" class="snow-cloud">
+                            <!-- Gradient Definition -->
+                            <defs>
+                                <linearGradient id="iceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#a8d5ff"/>
+                                    <stop offset="50%" style="stop-color:#7cb9e8"/>
+                                    <stop offset="100%" style="stop-color:#6495ed"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- Base Cloud -->
+                            <path class="cloud" d="
+                            M 72,200 
+                            Q 72,160 100,160 
+                            Q 100,80 158,80 
+                            Q 187,40 245,60
+                            Q 274,20 317,40
+                            Q 360,20 389,60
+                            Q 432,40 461,80
+                            Q 504,80 504,140
+                            Q 533,140 533,200
+                            Q 533,260 490,260
+                            Q 475,280 446,280
+                            L 130,280
+                            Q 101,280 86,260
+                            Q 72,260 72,200
+                            Z" fill="white"/>
+                            
+                            <!-- 3D Detail Lines -->
+                            <path class="cloud-detail" d="
+                                M 90,260 Q 90,180 130,180
+                                M 150,160 Q 170,140 190,152
+                                M 210,140 Q 230,120 250,140
+                                M 270,160 Q 290,140 310,160
+                                M 190,180 Q 210,160 230,180
+                                M 250,200 Q 270,180 290,200
+                                M 110,240 Q 130,220 150,232
+                                M 170,220 Q 190,200 210,220
+                                M 230,240 Q 250,220 270,240" 
+                                stroke="currentColor"/>
+                            
+                            <!-- Snowflakes -->
+                            <g class="snowflakes">
+                                <!-- Row 1 -->
+                                <path class="snowflake delay1" d="M 150,280 l 6,3.5 l 6,0 l 6,-3.5 l 0,-7 l -6,-3.5 l -6,0 l -6,3.5 z" />
+                                <path class="snowflake delay2" d="M 250,280 l 6,3.5 l 6,0 l 6,-3.5 l 0,-7 l -6,-3.5 l -6,0 l -6,3.5 z" />
+                                <path class="snowflake delay3" d="M 350,280 l 6,3.5 l 6,0 l 6,-3.5 l 0,-7 l -6,-3.5 l -6,0 l -6,3.5 z" />
+                                <path class="snowflake delay4" d="M 450,280 l 6,3.5 l 6,0 l 6,-3.5 l 0,-7 l -6,-3.5 l -6,0 l -6,3.5 z" />
+                                
+                                <!-- Row 2 -->
+                                <path class="snowflake delay2" d="M 200,240 l 6,3.5 l 6,0 l 6,-3.5 l 0,-7 l -6,-3.5 l -6,0 l -6,3.5 z" />
+                                <path class="snowflake delay3" d="M 300,240 l 6,3.5 l 6,0 l 6,-3.5 l 0,-7 l -6,-3.5 l -6,0 l -6,3.5 z" />
+                                <path class="snowflake delay4" d="M 400,240 l 6,3.5 l 6,0 l 6,-3.5 l 0,-7 l -6,-3.5 l -6,0 l -6,3.5 z" />
+                                
+                                <!-- Row 3 -->
+                                <path class="snowflake delay1" d="M 250,200 l 6,3.5 l 6,0 l 6,-3.5 l 0,-7 l -6,-3.5 l -6,0 l -6,3.5 z" />
+                                <path class="snowflake delay2" d="M 350,200 l 6,3.5 l 6,0 l 6,-3.5 l 0,-7 l -6,-3.5 l -6,0 l -6,3.5 z" />
+                            </g>
+                        </svg>
+                    </div>
+                    
+                    <!-- Weather Status -->
+                    <div class="weather-status">
+                        <h1 style="font-size: 3.75rem; background: linear-gradient(135deg, #a8d5ff, #7cb9e8, #6495ed); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Heavy Snow</h1>
+                        <p class="status-description" style="font-size: 1.875rem; background: linear-gradient(135deg, #a8d5ff, #7cb9e8, #6495ed); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Continuous snowfall expected</p>
+                    </div>
+
+                    <!-- Snow/Rain Information -->
+                    <div class="precipitation-info">
+                        <div class="info-row">
+                            <div class="info-item" style="transform: scale(1.25);">
+                                <span class="label">Snow Chance</span>
+                                <span class="value">100%</span>
+                            </div>
+                            <div class="info-item" style="transform: scale(1.25);">
+                                <span class="label">Cloud Cover</span>
+                                <span class="value">100%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sun Cycle -->
+                    <div class="sun-cycle">
+                        <div class="cycle-graph">
+                            <svg viewBox="0 0 200 120" class="sun-path">
+                                <!-- Sun Arc -->
+                                <path d="M 0,120 A 90,90 0 0,1 200,120" 
+                                      fill="none" 
+                                      stroke="#FFB6C1" 
+                                      stroke-width="2"/>
+                                <!-- Current Sun Position (at 2:15 PM) -->
+                                <circle cx="150" cy="35" r="8" fill="#FFD700"/>
+                                <circle cx="150" cy="35" r="10" fill="#FFD700" opacity="0.3"/>
+                            </svg>
+                            <div class="sunrise">
+                                <span class="time">7:12 AM</span>
+                                <span class="label">Sunrise</span>
+                            </div>
+                            <div class="sunset">
+                                <span class="time">4:48 PM</span>
+                                <span class="label">Sunset</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Snow Graph -->
+                    <div class="temp-graph">
+                        <h2 style="text-align: center; margin: 1rem 0;">Temperature</h2>
+                        <div class="intensity-graph">
+                            <div class="y-axis">
+                                <span>0.0"</span>
+                                <span>2.5"</span>
+                                <span>5.0"</span>
+                                <span>7.5"</span>
+                                <span>10.0"</span>
+                            </div>
+                            <div class="graph-area">
+                                <svg viewBox="0 0 300 100">
+                                    <linearGradient id="tempGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color: rgba(124, 185, 232, 0.3)"/>
+                                        <stop offset="100%" style="stop-color: rgba(124, 185, 232, 0)"/>
+                                    </linearGradient>
+                                    <path d="M 0,60 C 50,40 100,70 150,50 C 200,30 250,45 300,35" 
+                                          stroke="#7cb9e8" 
+                                          stroke-width="2"
+                                          fill="none"/>
+                                    <path d="M 0,60 C 50,40 100,70 150,50 C 200,30 250,45 300,35 L 300,100 L 0,100 Z" 
+                                          fill="url(#tempGradient)"/>
+                                </svg>
+                            </div>
+                            <div class="x-axis">
+                                <span>NOW</span>
+                                <span>6P</span>
+                                <span>12A</span>
+                                <span>6A</span>
+                                <span>12P</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UV Index -->
+                    <div class="uv-container">
+                        <h2 style="text-align: center; margin: 1rem 0;">UV Index</h2>
+                        <div class="sun-icon">
+                            <svg viewBox="0 0 100 100" width="60" height="60">
+                                <circle cx="50" cy="50" r="20" fill="none" stroke="white" stroke-width="2"/>
+                                <g>
+                                    <line x1="50" y1="20" x2="50" y2="10" stroke="white" stroke-width="2"/>
+                                    <line x1="50" y1="90" x2="50" y2="80" stroke="white" stroke-width="2"/>
+                                    <line x1="20" y1="50" x2="10" y2="50" stroke="white" stroke-width="2"/>
+                                    <line x1="90" y1="50" x2="80" y2="50" stroke="white" stroke-width="2"/>
+                                    <line x1="74" y1="74" x2="80" y2="80" stroke="white" stroke-width="2"/>
+                                    <line x1="26" y1="26" x2="20" y2="20" stroke="white" stroke-width="2"/>
+                                    <line x1="74" y1="26" x2="80" y2="20" stroke="white" stroke-width="2"/>
+                                    <line x1="26" y1="74" x2="20" y2="80" stroke="white" stroke-width="2"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="uv-value">2</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="iphone-home-indicator"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
